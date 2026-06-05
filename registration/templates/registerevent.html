@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Event</title>
+    {% load static%}
+    <link rel="stylesheet" href="{%static 'css/registerevent.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav id="menu">
+                <ul>
+                  <li><a href="registerevent">Book your event</a></li>
+                  <li><a href="display_review">Review</a></li>
+                  <li><a href="aboutus2">About</a></li>
+                  <li><a href="bookevent2">Event</a></li>
+                  <li><a href="userdashboard">User Profile</a></li>
+                  <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
+                </ul>
+              </nav>
+        </div>
+        <div class="content">
+            <center>
+            <h1>Book Event</h1>
+            <form action="registerevent" method="post" class="register-form">
+                {% csrf_token %}
+                Event ID:  
+                <select name="all_event" id="textbox">
+                    <option value="Choose">Choose one</option>
+                    {% for event in all_event %}
+                        <option value={{event.eventID}}>{{event.eventname}}</option>
+                    {% endfor %}
+                </select><br><br>
+
+                Quantity of ticket: <input type="number" name="numofticket" id="textbox"><br><br>
+                Payment Method: <select name="paymentmethod" id="textbox" >
+                    <option value="Choose">Choose one</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option></select><br><br>
+                Date of Register :  <input type="date" name="registerdate" id="textbox"><br><br>
+                <input type="submit" value="SAVE" id="register-button">
+    
+            </form>
+            {{message}}
+            
+            <div class="history-booking">
+                {% for register in userregister %}
+                    <h2>Your Upcoming Bookings:</h2>    
+                    <p>Event Name: {{ register.eventID.eventname }}</p><br>
+                    <p>Number of Tickets: {{ register.numofticket }}</p><br>
+                    <p>Payment Method: {{ register.paymentmethod }}</p><br>
+                    <p>Register Date: {{register.registerdate }}</p><br>
+                    <p>Total Price: RM{{ register.totalprice }}.00</p><br>
+                    <form method="POST" action="{% url 'registerevent' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="registerID" value="{{ register.registerID }}">
+                        <button type="submit" name="cancel_register" id="cancel-button">Cancel</button>
+                    </form><br><br><br>
+                {% endfor %}
+            </div>
+            </center>
+            <div class="button-below">
+                <a href="{% url 'index2' %}" id="btn11">Back to homepage</a>
+            </div>
+        </div>
+        <hr id="footer-line"> 
+        <div class="footer-container">
+            <!--Column 1: about-->
+            <div class="footer-column">
+                <h3 id="title-footer">About Us</h3>
+                <a href="#">Our Story</a>
+                <a href="#">Experience</a>
+                <a href="#">Blog</a>
+            </div>
+            <!--Column 2: help-->
+            <div class="footer-column">
+                <h3 id="title-footer">Help</h3>
+                <a href="#">Customer Support</a>
+                <a href="#">FAQs</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <!--Column 3: socmed-->
+            <div class="footer-column">
+                <h3 id="title-footer">Our Social Media</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Tiktok</a>
+            </div>
+
+            <!-- Column 4: Newsletter -->
+            <div class="footer-column">
+                <h3 id="title-footer">Newsletter</h3>
+                <p id="footersentences">Subscribe to our newsletter to get the latest news and updates.</p>
+                <div class="footer-newsletter">   
+                    <form name="myForm" onsubmit="return validateForm()" method="post">
+                        <input type="email"  id="mail" name=newsletteremail >
+                        <input type="submit" value="Subscribe" class="sub-btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <p>&copy;explore_terengganu. All Rights Reserved.</p>
+    </div>
+
+        <!--validate newsletter form-->
+        <script type="text/javascript">
+            function validateForm(){
+            let x= document.forms["myForm"]["newsletteremail"].value;
+
+            if (x==""){
+                alert ("Please fill in your email!");
+                return false;
+            }
+            else
+            {
+                alert("You have subscribed to our newsletter.");
+            }
+        }
+        const emailInput = document.getElementById("mail");
+        emailInput.setAttribute("placeholder", "Enter your email here");
+    </script>
+
+    
+</body>
+</html>

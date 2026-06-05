@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/aboutus.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav id="menu">
+                <ul>
+                  <li><a href="bookevent">Book your event</a></li>
+                  <li><a href="aboutus">About</a></li>
+                  <li><a href="bookevent">Event</a></li>
+                  <li><a href="registeracc">Sign Up</a></li>
+                  <li><a href="loginacc">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div id="title-header">
+                <h1 class="titleheader">About Us</h1>
+                <center><hr id="lineheader" style="width: 20%;"></center><br><br>
+                <p>Ready to explore? </p>
+            </div>
+            <br><br>
+            <div class="gambar">
+                {%load static%}
+                <img src="{% static 'media/island.jpg' %}" style="width:100%">
+            </div>
+            <br>
+            <div id="info">
+                <div id="info-write">
+                    <p>Welcome to Explore Terengganu, your ultimate guide to discovering the beauty 
+                        and culture of Terengganu! Our platform is dedicated to bringing you closer to 
+                        the state's most captivating events, attractions, and experiences. Whether you're 
+                        looking to immerse yourself in local traditions, enjoy breathtaking beaches, or participate 
+                        in exciting festivals, Explore Terengganu is here to help you plan and book your perfect adventure. 
+                        Let us guide you through a journey of discovery, where every corner of Terengganu tells a story 
+                        waiting to be explored.</p>
+                </div>
+
+                <div id="info-contact">
+                    <div class="contact-card">
+                        <p><strong>ADDRESS</strong><br> Kuala Terengganu, Terengganu, Malaysia</p>
+                    </div>
+                    <div class="contact-card">
+                        <p><strong>PHONE</strong><br>(+60) 123-456789</p>
+                    </div>
+                    <div class="contact-card">
+                        <p><strong>EMAIL</strong><br>info@exploreterengganu.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+        <div class="button-below">
+            <a href="/explore_terengganu" id="btn11">Back to homepage</a>
+        </div>
+
+
+
+        <hr id="footer-line"> 
+	    <div class="footer-container">
+	    	<!--Column 1: about-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">About Us</h3>
+	    		<a href="#">Our Story</a>
+	    		<a href="#">Experience</a>
+	    		<a href="#">Blog</a>
+	    	</div>
+	    	<!--Column 2: help-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Help</h3>
+	    		<a href="#">Customer Support</a>
+	    		<a href="#">FAQs</a>
+	    		<a href="#">Terms & Conditions</a>
+	    		<a href="#">Privacy Policy</a>
+	    	</div>
+
+	    	<!--Column 3: socmed-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Our Social Media</h3>
+	    		<a href="#">Facebook</a>
+	    		<a href="#">Instagram</a>
+	    		<a href="#">Twitter</a>
+	    		<a href="#">Tiktok</a>
+	    	</div>
+
+	    	<!-- Column 4: Newsletter -->
+            <div class="footer-column">
+                <h3 id="title-footer">Newsletter</h3>
+                <p id="footersentences">Subscribe to our newsletter to get the latest news and updates.</p>
+                <div class="footer-newsletter">
+                	<form name="myForm" onsubmit="return validateForm()" method="post">
+
+                		<input type="email"  id="mail" name=newsletteremail>
+                		<input type="submit" value="Subscribe" class="sub-btn">
+                	</form>
+                </div>
+            </div>
+	    </div>
+        <p>&copy;explore_terengganu. All Rights Reserved.</p>
+
+    </div>
+
+
+    <!--validate newsletter form-->
+    <script type="text/javascript">
+        function validateForm(){
+           let x= document.forms["myForm"]["newsletteremail"].value;
+
+           if (x==""){
+               alert ("Please fill in your email!");
+               return false;
+           }
+           else
+           {
+               alert("You have subscribed to our newsletter.");
+           }
+       }
+       const emailInput = document.getElementById("mail");
+       emailInput.setAttribute("placeholder", "Enter your email here");
+   </script>
+    
+</body>
+</html>

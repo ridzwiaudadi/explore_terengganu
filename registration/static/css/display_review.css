@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #E9DED6;
+}
+.header {
+background-color: #4E3629;
+padding: 20px;
+text-align: right;
+position: sticky;
+top: 0;
+}
+
+#menu ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: flex-end;
+}
+
+#menu li {
+margin-right: 20px;
+}
+
+#menu a {
+color: #fff;
+text-decoration: none;
+transition: color 0.2s ease;
+}
+
+#menu a:hover {
+color: #F5DEB3; /* light brownish color */
+}
+
+#menu a:active {
+color: #F5DEB3;
+}
+
+.button-below{           
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn22 {
+    background-color: #9a775c; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 20px auto;
+    text-decoration: none;
+    width: 20%;
+    text-align: center;
+}
+
+#btn22 :hover {
+    background-color: #af8464;
+    transform: scale(1.00);
+}
+
+#btn22 :focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.3);
+}
+#title-up{
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+    color: #3B2F2F;
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+content {
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+.review {
+    width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+#border-review {
+    color: #4E3629;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8ece6;
+    margin-bottom: 30px;
+}
+
+#footer-line{
+    margin-top: 30px;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+.footer-column{
+    flex: 1;
+    margin: 20px;
+    min-width: 200px;
+}
+#title-footer{
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #6b592c;
+}
+
+.footer-column a{
+    color: #A25F2B;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s;
+    font-size: 15px;
+}
+
+.footer-column a:hover {
+    color: #3B2F2F
+}
+
+#mail{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 80%
+}
+#footersentences{
+    color: #A25F2B;
+}
+
+.sub-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #cda688; 
+    color: black; 
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}

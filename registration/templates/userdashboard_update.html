@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    {% load static %}
+     <link rel="stylesheet" href="{%static 'css/userdashboard_update.css'%}">
+     <style type="text/css">
+
+     </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav id="menu">
+                <ul>
+                  <li><a href="registerevent">Book your event</a></li>
+                  <li><a href="display_review">Review</a></li>
+                  <li><a href="aboutus2">About</a></li>
+                  <li><a href="bookevent2">Event</a></li>
+                  <li><a href="userdashboard">User Profile</a></li> 
+                  <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="update-form">
+            <h2>Update Profile</h2>
+            <form method="POST" action="{% url 'userdashboard_update' userID=user.userID %}">
+                {% csrf_token %}
+                Phone Number: 
+                <input type="text" name="userphonenum" placeholder="Enter your phone number" id="textbox11"><br>
+                Email:
+                <input type="email" name="useremail"  placeholder="Enter your email" id="textbox11"><br><br>
+                <button type="submit" id="update-btn">Update</button>
+            </form>
+        </div>
+        <hr id="footer-line"> 
+	    <div class="footer-container">
+	    	<!--Column 1: about-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">About Us</h3>
+	    		<a href="#">Our Story</a>
+	    		<a href="#">Experience</a>
+	    		<a href="#">Blog</a>
+	    	</div>
+	    	<!--Column 2: help-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Help</h3>
+	    		<a href="#">Customer Support</a>
+	    		<a href="#">FAQs</a>
+	    		<a href="#">Terms & Conditions</a>
+	    		<a href="#">Privacy Policy</a>
+	    	</div>
+
+	    	<!--Column 3: socmed-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Our Social Media</h3>
+	    		<a href="#">Facebook</a>
+	    		<a href="#">Instagram</a>
+	    		<a href="#">Twitter</a>
+	    		<a href="#">Tiktok</a>
+	    	</div>
+
+	    	<!-- Column 4: Newsletter -->
+            <div class="footer-column">
+                <h3 id="title-footer">Newsletter</h3>
+                <p id="footersentences">Subscribe to our newsletter to get the latest news and updates.</p>
+                <div class="footer-newsletter">
+                	<form name="myForm" onsubmit="return validateForm()" method="post">
+                		<input type="email"  id="mail" name=newsletteremail>
+                		<input type="submit" value="Subscribe" class="sub-btn">
+                	</form>
+                </div>
+            </div>
+	    </div>
+        <p>&copy;explore_terengganu. All Rights Reserved.</p>
+    </div>
+
+
+    <!--validate newsletter form-->
+    <script type="text/javascript">
+        function validateForm(){
+           let x= document.forms["myForm"]["newsletteremail"].value;
+
+           if (x==""){
+               alert ("Please fill in your email!");
+               return false;
+           }
+           else
+           {
+               alert("You have subscribed to our newsletter.");
+           }
+       }
+       const emailInput = document.getElementById("mail");
+       emailInput.setAttribute("placeholder", "Enter your email here");
+   </script>
+    
+</body>
+</html>

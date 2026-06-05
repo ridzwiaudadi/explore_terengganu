@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Registration</title>
+    {% load static%}
+    <link rel="stylesheet" href="{%static 'css/registeracc.css'%}">
+</head>
+<body>
+    <div class="header">
+        <nav id="menu">
+            <ul>
+              <li><a href="aboutus">About</a></li>
+              <li><a href="bookevent">Event</a></li>
+              <li><a href="registeracc">Sign Up</a></li>
+              <li><a href="loginacc">Login</a></li>
+            </ul>
+          </nav>
+    </div>
+    <div class="content">
+        <center>
+        <h1>Registration</h1>
+        <form action="registeracc" method="post" class="register-form">
+            {% csrf_token %}
+            Username:  <input type="text" name="username" id="textbox"><br><br>
+            Password: <input type="text" name="password" id="textbox"><br><br>
+            Phone Number: <input type="text" name="userphonenum" id="textbox"><br><br>
+            Email: <input type="email" name="useremail" id="textbox"><br><br>
+
+            <input type="submit" value="SAVE" id="register-button">
+
+        </form>
+        </center>   
+    </div>
+    <br><br>
+    {{message}}
+    <br>
+    
+    <div class="button-below">
+        <a href="/explore_terengganu" id="btn22">Back to homepage</a>
+        <br>
+        <a href="loginacc" id="btn22">Login</a>
+    </div>
+
+    <hr id="footer-line"> 
+	    <div class="footer-container">
+	    	<!--Column 1: about-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">About Us</h3>
+	    		<a href="#">Our Story</a>
+	    		<a href="#">Experience</a>
+	    		<a href="#">Blog</a>
+	    	</div>
+	    	<!--Column 2: help-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Help</h3>
+	    		<a href="#">Customer Support</a>
+	    		<a href="#">FAQs</a>
+	    		<a href="#">Terms & Conditions</a>
+	    		<a href="#">Privacy Policy</a>
+	    	</div>
+
+	    	<!--Column 3: socmed-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Our Social Media</h3>
+	    		<a href="#">Facebook</a>
+	    		<a href="#">Instagram</a>
+	    		<a href="#">Twitter</a>
+	    		<a href="#">Tiktok</a>
+	    	</div>
+
+	    	<!-- Column 4: Newsletter -->
+            <div class="footer-column">
+                <h3 id="title-footer">Newsletter</h3>
+                <p id="footersentences">Subscribe to our newsletter to get the latest news and updates.</p>
+                <div class="footer-newsletter">
+                	<form name="myForm" onsubmit="return validateForm()" method="post">
+                		<input type="email"  id="mail" name=newsletteremail>
+                		<input type="submit" value="Subscribe" class="sub-btn">
+                	</form>
+                </div>
+            </div>
+	    </div>
+        <p>&copy;explore_terengganu. All Rights Reserved.</p>
+    </div>
+
+
+
+
+
+
+
+
+    <!--validate newsletter form-->
+    <script type="text/javascript">
+        function validateForm(){
+           let x= document.forms["myForm"]["newsletteremail"].value;
+
+           if (x==""){
+               alert ("Please fill in your email!");
+               return false;
+           }
+           else
+           {
+               alert("You have subscribed to our newsletter.");
+           }
+       }
+       const emailInput = document.getElementById("mail");
+       emailInput.setAttribute("placeholder", "Enter your email here");
+   </script>
+</body>
+</html>

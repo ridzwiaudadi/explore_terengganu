@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav id="menu">
+                <ul>
+                  <li><a href="{% url 'registerevent' %}">Book your event</a></li>
+                  <li><a href="display_review">Review</a></li>
+                  <li><a href="aboutus2">About</a></li>
+                  <li><a href="bookevent2">Event</a></li>
+                  <li><a href="userdashboard">User Profile</a></li>
+                  <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
+                </ul>
+              </nav>
+        </div>
+        <div class="content">
+            
+            <img src="{% static 'media/flag.jpg' %}" style="width:100%">
+
+            <br><br>
+            <h1 id="tajuk"> WELCOME TO <span id="warnalain">EXPLORE TERENGGANU</span></h1>
+            <p id="tajukkecil">Your gateway to amazing events! Dive in and discover something special today!</p>
+            <div class="intro">
+                <div class="article">
+                    <br>
+                    <h3>Introduction</h3>
+                    <br><br>
+                    <p>Terengganu, located on the eastern coast of Peninsular Malaysia, is a state known for its stunning 
+                        natural beauty and rich cultural heritage. It boasts pristine beaches with crystal-clear waters, 
+                        such as those on Redang Island and Perhentian Islands, making it a paradise for beach lovers and divers. 
+                        The state's landscape also features lush rainforests and charming fishing villages, providing a glimpse 
+                        into a simpler, traditional way of life.</p>
+                        <br><br><br>
+                        <p>Terengganu is also famous for its vibrant culture, which includes traditional arts like batik-making, 
+                        songket weaving, and wayang kulit (shadow puppetry). The capital city, Kuala Terengganu, is home to 
+                        landmarks such as the Crystal Mosque and the Terengganu State Museum, which is the largest museum in 
+                        Southeast Asia. Visitors can also explore the local markets to taste delicious traditional foods like 
+                        keropok lekor and nasi dagang, adding to the state's appeal as a destination that blends nature, culture, 
+                        and history seamlessly.</p>
+                </div>
+                <div class="gambar">
+                    <img src="{% static 'media/HomepageBig.jpg' %}">
+                    <p id="italic">Crystal Mosque</p>
+                    <img src="{% static 'media/penyu.jpg' %}">
+                    <p id="italic">Pulau Redang</p>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="button1">
+	            <button><a href="bookevent2">Book our event now!</a></button>
+            </div>
+            <br><br><br>
+        </div>
+
+        </div>
+
+        <hr id="footer-line"> 
+	    <div class="footer-container">
+	    	<!--Column 1: about-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">About Us</h3>
+	    		<a href="#">Our Story</a>
+	    		<a href="#">Experience</a>
+	    		<a href="#">Blog</a>
+	    	</div>
+	    	<!--Column 2: help-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Help</h3>
+	    		<a href="#">Customer Support</a>
+	    		<a href="#">FAQs</a>
+	    		<a href="#">Terms & Conditions</a>
+	    		<a href="#">Privacy Policy</a>
+	    	</div>
+
+	    	<!--Column 3: socmed-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Our Social Media</h3>
+	    		<a href="#">Facebook</a>
+	    		<a href="#">Instagram</a>
+	    		<a href="#">Twitter</a>
+	    		<a href="#">Tiktok</a>
+	    	</div>
+
+	    	<!-- Column 4: Newsletter -->
+            <div class="footer-column">
+                <h3 id="title-footer">Newsletter</h3>
+                <p id="footersentences">Subscribe to our newsletter to get the latest news and updates.</p>
+                <div class="footer-newsletter">
+                	<form name="myForm" onsubmit="return validateForm()" method="post">
+                		<input type="email"  id="mail" name=newsletteremail>
+                		<input type="submit" value="Subscribe" class="sub-btn">
+                	</form>
+                </div>
+            </div>
+	    </div>
+        <p>&copy;explore_terengganu. All Rights Reserved.</p>
+    </div>
+
+
+
+    <!--validate newsletter form-->
+    <script type="text/javascript">
+        function validateForm(){
+           let x= document.forms["myForm"]["newsletteremail"].value;
+
+           if (x==""){
+               alert ("Please fill in your email!");
+               return false;
+           }
+           else
+           {
+               alert("You have subscribed to our newsletter.");
+           }
+       }
+       const emailInput = document.getElementById("mail");
+       emailInput.setAttribute("placeholder", "Enter your email here");
+   </script>
+    
+</body>
+</html>

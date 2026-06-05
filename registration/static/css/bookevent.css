@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #E9DED6;
+}
+.header {
+background-color: #4E3629;
+padding: 20px;
+text-align: right;
+position: sticky;
+top: 0;
+}
+
+#menu ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: flex-end;
+}
+
+#menu li {
+margin-right: 20px;
+}
+
+#menu a {
+color: #fff;
+text-decoration: none;
+transition: color 0.2s ease;
+}
+
+#menu a:hover {
+color: #F5DEB3;
+}
+
+#menu a:active {
+color: #F5DEB3;
+}
+
+.search-event{
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;    
+}
+#textbox{
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #cda688;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: #fdfaf5;
+    color: #4E3629;
+}
+
+#textbox :focus{
+    border-color: #af8464;
+    outline: none;
+    box-shadow: 0 0 5px rgba(175, 132, 100, 0.5);   
+}
+
+#search-btn{
+    padding: 10px 10px;
+    background-color: #cda688;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;    
+}
+#search-btn :hover{
+    background-color: #81593c;
+    transform: scale(1.05);
+}
+#search-btn :focus{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.3);    
+}
+.search-result {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.search-result h3 {
+    font-size: 20px;
+    color: #4E3629;
+    margin-top: 0;
+}
+
+
+#title-up{
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+    color: #3B2F2F;
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+content {
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+.event {
+    width: 85%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+#border-event {
+    color: #4E3629;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fefefe;
+    margin-bottom: 30px;
+}
+.btn22{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4E3629;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button-below{           
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-below a {
+    background-color: #af8464; 
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fbece0; 
+    text-decoration: none; 
+    margin: 30px;
+}
+
+.button-below #btn11 :hover {
+    background-color: #81593c;
+    transform: scale(1.05); 
+}
+.button-below #btn11:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.3); 
+}
+#footer-line{
+    margin-top: 30px;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+.footer-column{
+    flex: 1;
+    margin: 20px;
+    min-width: 200px;
+}
+#title-footer{
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #6b592c;
+}
+
+.footer-column a{
+    color: #A25F2B;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s;
+    font-size: 15px;
+}
+
+.footer-column a:hover {
+    color: #3B2F2F
+}
+
+#mail{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 80%
+}
+#footersentences{
+    color: #A25F2B;
+}
+
+.sub-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #cda688; 
+    color: black; 
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}

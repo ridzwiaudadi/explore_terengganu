@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Event</title>
+     {% load static %}
+     <link rel="stylesheet" href="{%static 'css/bookevent.css'%}">
+     <style type="text/css">
+        .button-below{           
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button-below a {
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav id="menu">
+                <ul>
+                  <li><a href="registerevent">Book your event</a></li>
+                  <li><a href="display_review">Review</a></li>
+                  <li><a href="aboutus2">About</a></li>
+                  <li><a href="bookevent2">Event</a></li>
+                  <li><a href="userdashboard">User Profile</a></li>
+                  <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
+
+                </ul>
+              </nav>
+        </div>
+        <br><br>
+        <center>
+        <div class="search-event">
+            <form action="" method="get">
+                Enter Event: <input type="text" name="search_event" id="textbox" placeholder="Event">
+                <input type="submit" value="SEARCH" id="search-btn">
+            </form>
+        </div>
+        <div class="search-result">
+            {%if data%}
+                {%for value in data%}
+                Event name: {{value.eventname}}<br><br>
+                Location: {{value.eventlocation}}<br><br>
+                Price: RM {{value.eventprice}}0<br><br>
+                Start Date: {{value.startdate}}<br><br>
+                End Date: {{value.enddate}}<br><br>
+                {%endfor%}
+            {%else%}
+                <p></p>
+            {%endif%}
+
+            {{message}}
+        </div>
+        </center>
+        <div class="content">
+            <h1 id="title-up">Our Events</h1>
+            {% for event in event %}
+            <div class="event">
+                <div id="border-event">  
+                    <h1>{{event.eventname}}</h1>
+                    <p>Location: {{event.eventlocation}}</p>
+                    <p>Price: RM {{event.eventprice}}0</p>
+                    <p>Start Date: {{event.startdate}}</p>
+                    <p>End Date: {{event.enddate}}</p><br>
+                </div>
+            </div>
+            {% endfor %}
+
+            <br><br>
+            <div class="button-below">
+                <a href="{% url 'index2' %}" class="btn22">Back to homepage</a>
+                <br>
+                <a href="registerevent" class="btn22">Book Event</a>
+            </div>
+        </div>
+
+
+
+        <hr id="footer-line"> 
+	    <div class="footer-container">
+	    	<!--Column 1: about-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">About Us</h3>
+	    		<a href="#">Our Story</a>
+	    		<a href="#">Experience</a>
+	    		<a href="#">Blog</a>
+	    	</div>
+	    	<!--Column 2: help-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Help</h3>
+	    		<a href="#">Customer Support</a>
+	    		<a href="#">FAQs</a>
+	    		<a href="#">Terms & Conditions</a>
+	    		<a href="#">Privacy Policy</a>
+	    	</div>
+
+	    	<!--Column 3: socmed-->
+	    	<div class="footer-column">
+	    		<h3 id="title-footer">Our Social Media</h3>
+	    		<a href="#">Facebook</a>
+	    		<a href="#">Instagram</a>
+	    		<a href="#">Twitter</a>
+	    		<a href="#">Tiktok</a>
+	    	</div>
+
+	    	<!-- Column 4: Newsletter -->
+            <div class="footer-column">
+                <h3 id="title-footer">Newsletter</h3>
+                <p id="footersentences">Subscribe to our newsletter to get the latest news and updates.</p>
+                <div class="footer-newsletter">
+                	<form name="myForm" onsubmit="return validateForm()" method="post">
+                		<input type="email"  id="mail" name=newsletteremail>
+                		<input type="submit" value="Subscribe" class="sub-btn">
+                	</form>
+                </div>
+            </div>
+	    </div>
+        <p>&copy;explore_terengganu. All Rights Reserved.</p>
+        </div>
+
+
+    <!--validate newsletter form-->
+    <script type="text/javascript">
+        function validateForm(){
+           let x= document.forms["myForm"]["newsletteremail"].value;
+
+           if (x==""){
+               alert ("Please fill in your email!");
+               return false;
+           }
+           else
+           {
+               alert("You have subscribed to our newsletter.");
+           }
+       }
+       const emailInput = document.getElementById("mail");
+       emailInput.setAttribute("placeholder", "Enter your email here");
+   </script>
+    
+</body>
+</html>
